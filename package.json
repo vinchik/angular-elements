@@ -4,11 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --output-hashing=none",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "package": "cat dist/first-custom-element/runtime-es2015.js dist/first-custom-element/polyfills-es2015.js dist/first-custom-element/scripts.js dist/first-custom-element/main-es2015.js > showroom/first-custom-element.js"
+    "package": "rm -rf showroom/* && ng build --prod --output-hashing=none && cat dist/first-custom-element/runtime-es2015.js dist/first-custom-element/polyfills-es2015.js dist/first-custom-element/scripts.js dist/first-custom-element/main-es2015.js > showroom/first-custom-element.js && cp -R dist/first-custom-element/assets showroom && cp -R packaging-src/* showroom",
+    "go-webos": "ares-package showroom/ --no-minify --outdir showroom/"
   },
   "private": true,
   "dependencies": {

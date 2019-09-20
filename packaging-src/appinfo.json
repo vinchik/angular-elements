@@ -1,0 +1,30 @@
+{
+  "version": "4.0.0-2",
+  "id": "com.lg.app.signage",
+  "vendor": "SICOM Systems",
+  "supportedOrientations": [
+    "Landscape",
+    "InvertedPortrait",
+    "InvertedLandscape",
+    "Portrait"
+  ],
+  "type": "web",
+  "main": "index.html",
+  "icon": "sicom-logo-icon.png",
+  "inspectable": true,
+  "title": "Digital Menu Board",
+  "sicom": {
+    "logger": {
+      "logLevel": "debug"
+    },
+    "developerPause": 5000,
+    "serverConnectionTimeout": 10000,
+    "coordinatorPort": "53001",
+    "development": {
+      "host": "10.60.151.234",
+      "port": "53001"
+    },
+    "waitingForPeersTimeout": 3000
+  },
+  "displayName": "DISPLAY_01"
+}

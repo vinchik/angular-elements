@@ -1,38 +1,21 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-button',
   template: `
     <div>
-      <button (click)="decrease()">-</button>
-        {{ value }}
-      <button (click)="increase()">+</button>
+      <video autoplay loop>
+        <source src="assets/video/food-ad.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
   `,
   styles: [`
+    /* test styling */
     div {
-      color: red;
+      border: 3px solid greenyellow;
     }
   `],
   encapsulation: ViewEncapsulation.Native
 })
-export class ButtonComponent implements OnInit {
-  @Input() startingValue: string = '0';
-
-  public value: number = 0;
-
-  constructor() { }
-
-  ngOnInit() {
-    this.value = parseInt(this.startingValue, 10);
-  }
-
-  decrease() {
-    this.value--;
-  }
-
-  increase() {
-    this.value++;
-  }
-
-}
+export class ButtonComponent {}
